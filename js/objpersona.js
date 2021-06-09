@@ -37,7 +37,7 @@ let persona = {
 
     saludo: function(){
 
-        alert('¡Hola!, Soy '+ this.nombre + `.`);
+        alert('¡Hola!, Soy '+ this.nombre);
 
         document.write(`<br>` + 'Tengo ' + this.edad + ` años` + `<br>` + `DNI: ` 
         + this.DNI + `<br>` + ' Domicilo: ' + this.domicilio + `<br>` + 'Hijos: ' + this.hijos + `<br>` + `Profesion: ` + this.profesion);
@@ -50,11 +50,21 @@ let persona = {
       
 }*/
 
-
 }
 
+/*Arreglo de objetos: Películas
+
+Crear un arreglo de objetos que contenga datos de películas como:
+
+Título
+Género
+Año
+sinopsis
+Crea una función que permita mostrar en una lista cada película con sus datos.
+
+*/
 
 
-//saludar();
+
 
 
