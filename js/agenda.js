@@ -68,15 +68,15 @@ function eliminarContacto(email){//findIndex para buscar una posicion
     let iduser = agendas.findIndex(function(persona){
         return persona.email === email
     })
-if(iduser>-1){
+if(iduser > - 1){
     let validar = confirm(`esta seguro quiere eliminar el usuario`)
     if(validar){
         agendas.splice(iduser,1) //para eliminar un elemento 
-        localStorage.setItem(`agendas`,JSON.stringify(`agendas`))
+        localStorage.setItem(`agendas`,JSON.stringify(`agendas`)) //SE USA PARA ACTUALIZAR LOCALSTORE SETITEM
         console.log("El usuario a sido eliminado")
     }else{
         console.log("El usuario no existe")
     }
 }
 
-}
+} //preguntar por que borra luego lista ok pero en localstore agendas no tiene nada
