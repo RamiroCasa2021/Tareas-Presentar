@@ -1,6 +1,8 @@
 //Traigo de localStorage los datos si los hay
 let heroes = JSON.parse(localStorage.getItem("heroes")) || [];
 
+let heore={} //vairable global uso para eliminar
+
 //Capturo cada elemento del formulario de registro
 let alias = document.querySelector("#aliasText");
 let nombre = document.querySelector("#nameText");
@@ -64,12 +66,47 @@ function cargarTabla() {
                 <td>${heroe.nombre}</td>
                 <td>${heroe.poder}</td>
                 <td>${heroe.equipo}</td>
+                <td>
+                <button class="btn btn-warning" onclick='verHeroe(${index})'>Ver</button>
+                </td>
+                <button class="btn btn-danger" onclick='verHeroe(${index})'>X</button>
+                </td>
+
                
 `;
     fila.innerHTML = datos;
 
     cuerpoTabla.appendChild(fila);
   });
+}
+
+function verHeroe(id) {
+ 
+  heroe=heroes[id];
+
+  document.querySelector("#title_modal").innerText = heroe[id].alias;
+  document.querySelector(".card-title").innerText = heroe[id].nombre;
+  document.querySelector("#imagen_heroe").src = heroe[id].imagen;
+  document.querySelector("#text_poder").innerText = heroe[id].poder;
+  document.querySelector("#text_equipo").innerText = heroe[id].equipo;
+  $("#heroeModal").modal("show");
+}
+
+function borrarHeroe(){
+  
+  heroe=heroes[id];
+
+  let validar = confirm('Esta seguro que quiere borrar a ${heroe,alias}')
+
+  if(validar){
+
+    heroes.splice(id,1)
+    localStorage.setItem('heroes', JSON.stringify(heroes))
+
+    alert('se borro a &{}  ')
+
+  }
+
 }
 
 if (cuerpoTabla) {
